@@ -6,7 +6,9 @@ const { PATHS } = require('./webpack.config.js');
 module.exports = {
     entry: {
         demo1: Path.resolve(PATHS.SRC, 'jsx/demo1.jsx'),
-        demo2: Path.resolve(PATHS.SRC, 'jsx/demo2.jsx')
+        demo2: Path.resolve(PATHS.SRC, 'jsx/demo2.jsx'),
+        demo3: Path.resolve(PATHS.SRC, 'jsx/demo3.jsx'),
+        demo4: Path.resolve(PATHS.SRC, 'jsx/demo4.jsx')
     },
     output: {
         path: PATHS.DIST,

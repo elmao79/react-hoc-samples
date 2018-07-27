@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { compose } from 'recompose';
 
 const withStateTimes = WrappedComponent => class extends Component {
     constructor(props) {
@@ -50,7 +51,10 @@ const Button = ({ children, onClick }) => (
     </button>
 );
 
-const ButtonWithTrack = withStateTimes(withHandlerClick(Button));
+const ButtonWithTrack = compose(
+    withStateTimes,
+    withHandlerClick
+)(Button);
 
 class Demo extends Component {
     render() {
