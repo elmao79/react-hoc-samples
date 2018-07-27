@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width">
+        <title>React sample</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/javascript">
+            var js = document.createElement('script');
+            var sc = document.getElementsByTagName('script')[0];
+            js.async = true;
+            var search = window.location.search.replace('?', '').split('&');
+            var params = {};
+            search.map(function(item) {
+                var token = item.split('=');
+                if (token[1]) {
+                    params[token[0]] = token[1];
+                } else {
+                    params[token[0]] = '';
+                }
+            });
+            if (!params.t) {
+                params.t = 'demo1.js';
+            }
+            js.src = 'http://localhost:8081/js/' + params.t;
+            sc.parentNode.insertBefore(js, sc);
+        </script>
+    </body>
+</html>
